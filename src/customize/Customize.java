@@ -18,6 +18,7 @@
 package customize;
 
 import java.util.Random;
+import java.util.Scanner;
 
 
 
@@ -38,7 +39,7 @@ class randomParameters {
 	int at;
 	int de;
 	int sp;
-	String name;
+	
 	
 	public randomParameters(){
 		hp = rHp.nextInt(100) + 900;
@@ -46,7 +47,10 @@ class randomParameters {
 		at = rAt.nextInt(100) + 900;
 		de = rDe.nextInt(100) + 900;
 		sp = rSp.nextInt(100) + 900;
-		name = "fukui";
+		
+		Scanner sc = new Scanner(System.in);
+		String name = sc.next();
+		
 		
 		
 		if(name != null) {
@@ -68,4 +72,6 @@ public class Customize extends randomParameters{
 	public static void main(String[] args) {
 		randomParameters rp = new randomParameters();
 	}
+	
+
 }
