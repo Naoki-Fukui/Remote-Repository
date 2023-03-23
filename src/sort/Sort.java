@@ -46,15 +46,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Sort  {
+public class Sort {
 
 
-	public void scan() {
+	public static void main(String[] args) {
 
 
 		//		都道府県情報
 		Map<Integer, String> map = new HashMap<>();
-//		Map<Integer, String> mapList = new HashMap<>();
+		
 
 		int index = 0;
 
@@ -87,7 +87,7 @@ public class Sort  {
 			nums[i] = Integer.parseInt(strSplit[i]);  //	入力された数値分整数へ変換して配列へ代入
 			System.out.println(strSplit[i]);
 		}
-		
+
 		Arrays.sort(nums);
 
 
@@ -95,17 +95,17 @@ public class Sort  {
 		System.out.println("昇順（1）または降順（2）を選んでください");
 		int tmp = sc.nextInt();
 
-		
-		
+
+
 		if(tmp==1)
 		{
 			for(int i = 0; i < strSplit.length; i++) {
-					String[] split = map.get(nums[i]).split(":");
-					String output = "都道府県名：" +split[0] + "\n";
-				   	output += "県庁所在地：" + split[1] + "\n";
-				   	output += "面積：" + Double.parseDouble(split[2]) +"km2"+ "\n";
-				   	output += "数値：" + nums[i] + "\n";
-					System.out.println(output);
+				String[] split = map.get(nums[i]).split(":");
+				String output = "都道府県名：" +split[0] + "\n";
+				output += "県庁所在地：" + split[1] + "\n";
+				output += "面積：" + Double.parseDouble(split[2]) +"km2"+ "\n";
+				output += "数値：" + nums[i] + "\n";
+				System.out.println(output);
 			}
 		}
 		else if(tmp==2)
@@ -113,18 +113,18 @@ public class Sort  {
 			for(int i = strSplit.length-1; i >= 0; i--) {
 				String[] split = map.get(nums[i]).split(":");
 				String output = "都道府県名：" +split[0] + "\n";
-			   	output += "県庁所在地：" + split[1] + "\n";
-			   	output += "面積：" + Double.parseDouble(split[2]) +"km2"+ "\n";
-			   	output += "数値：" + nums[i] + "\n";
+				output += "県庁所在地：" + split[1] + "\n";
+				output += "面積：" + Double.parseDouble(split[2]) +"km2"+ "\n";
+				output += "数値：" + nums[i] + "\n";
 				System.out.println(output);
 			}
 		}
 		else
 		{
 			System.out.println("有効な入力ではありません");
-		
+
 		}
-		
+
 
 	}
 }
